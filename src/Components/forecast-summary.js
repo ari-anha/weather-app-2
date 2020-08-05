@@ -11,7 +11,7 @@ const ForecastSummary = ({
   handleForecastSelect,
 }) => {
   return (
-    <>
+    <div>
       <div className="date" data-testid="date-id">
         {moment(date).format("ddd Do MMM")}
       </div>
@@ -21,19 +21,22 @@ const ForecastSummary = ({
       <div className="description" data-testid="description-id">
         {description}
       </div>
-      <div className="icon" data-testid="icon-id">
-        <WeatherIcon name="owm" iconId={icon} />
-      </div>
+      <WeatherIcon
+        className="icon"
+        name="owm"
+        iconId={icon}
+        data-testid="icon-id"
+      />
       <button value={date} onClick={handleForecastSelect}>
         More Details
       </button>
-    </>
+    </div>
   );
 };
 
 ForecastSummary.propTypes = {
-  date: PropTypes.any.isRequired,
-  temperature: PropTypes.number.isRequired,
+  date: PropTypes.number.isRequired,
+  temperature: PropTypes.any.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.any.isRequired,
 };

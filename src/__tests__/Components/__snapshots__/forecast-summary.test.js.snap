@@ -2,29 +2,35 @@
 
 exports[`ForecastSummary renders correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="summary"
-  >
-    <span
+  <div>
+    <div
       class="date"
+      data-testid="date-id"
     >
-      mockDate
-    </span>
-    <span
+      Mon 30th Apr
+    </div>
+    <div
       class="temperature"
+      data-testid="temperature-id"
     >
-      mockTemperature
-    </span>
-    <span
+      mockTemperature°c
+    </div>
+    <div
       class="description"
+      data-testid="description-id"
     >
       mockDescription
-    </span>
-    <span
-      class="icon"
+    </div>
+    <i
+      class="wi wi-day-sunny icon"
+      data-testid="icon-id"
+      name="owm"
+    />
+    <button
+      value="1525046400000"
     >
-      mockIcon
-    </span>
+      More Details
+    </button>
   </div>
 </DocumentFragment>
 `;
