@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import LocationDetails from "./location-details";
 import ForecastSummaries from "./forecast-summaries";
-import DetailedForecastOnClick from "./detailed-forecast-onclick";
+import DetailedForecast from "./detailed-forecast";
 
 import "../styles/app.css";
 
-const App = (jsonfile) => (
+const App = (props) => (
   <div className="forecast">
     <LocationDetails
-      city={jsonfile.location.city}
-      country={jsonfile.location.country}
+      city={props.location.city}
+      country={props.location.country}
     />
-    <ForecastSummaries forecasts={jsonfile.forecasts} />
-    <DetailedForecastOnClick forecasts={jsonfile.forecasts} />
+    <ForecastSummaries forecasts={props.forecasts} />
+    <DetailedForecast forecasts={props.forecasts} />
   </div>
 );
 
