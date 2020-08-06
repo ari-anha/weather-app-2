@@ -1,0 +1,13 @@
+.forecast-summary {
+  text-align: center;
+  width: 200px;
+}
+
+.date {
+  font-size: 25px;
+}
+
+.weatherIcon {
+  line-height: 2;
+  font-size: 50px;
+}
