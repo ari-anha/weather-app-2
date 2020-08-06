@@ -4,6 +4,7 @@ import moment from "moment";
 
 const DetailedForecast = (props) => {
   const { date, temperature, humidity, wind } = props.forecasts[0];
+  console.log(props.forecasts);
   return (
     <div className="detailed-forecast">
       <div className="date">{moment(date).format("ddd Do MMM")}</div>
@@ -17,13 +18,17 @@ const DetailedForecast = (props) => {
       <div className="wind">
         Wind: {wind.speed}mph {wind.direction}
       </div>
-      <i class="wi wi-alien"></i>
+      <i className="wi wi-alien"></i>
     </div>
   );
 };
 
+DetailedForecast.defaultProps = {
+  forecasts: undefined,
+};
+
 DetailedForecast.propTypes = {
-  forecasts: PropTypes.object.isRequired,
+  forecasts: PropTypes.array,
 };
 
 export default DetailedForecast;

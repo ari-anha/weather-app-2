@@ -20,8 +20,11 @@ it("renders the correct props", () => {
     ],
   };
 
-  const { getByText } = render(<DetailedForecast forecast={props.forecasts} />);
+  const { getByText, debug } = render(
+    <DetailedForecast forecasts={props.forecasts} />
+  );
 
+  debug();
   expect(getByText("Mon 30th Apr")).toHaveClass("date");
   expect(getByText("Max Temperature: 11°c")).toHaveClass("temperatureMax");
   expect(getByText("Min Temperature: 4°c")).toHaveClass("temperatureMin");
