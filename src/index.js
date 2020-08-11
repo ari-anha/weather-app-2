@@ -3,11 +3,11 @@ import { render } from "react-dom";
 import "./index.css";
 import App from "./Components/App";
 import * as serviceWorker from "./serviceWorker";
-import { location, forecasts } from "./data/forecast.json";
+// import { location, forecasts } from "";
 
 render(
   <React.StrictMode>
-    <App location={location} forecasts={forecasts} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
