@@ -4,35 +4,27 @@ import WeatherIcon from "react-icons-weather";
 import moment from "moment";
 import "../styles/forecast-summary.css";
 
-const ForecastSummary = ({
-  date,
-  temperature,
-  description,
-  icon,
-  handleForecastSelect,
-}) => {
+const ForecastSummary = (props) => {
   return (
     <div className="forecast-summary">
       <div className="date" data-testid="date-id">
-        {moment(date).format("ddd Do MMM")}
+        {moment(props.date).format("ddd Do MMM")}
       </div>
       <div className="temperature" data-testid="temperature-id">
-        {temperature}&deg;c
+        {props.temperature}&deg;c
       </div>
       <div className="description" data-testid="description-id">
-        {description}
+        {props.description}
       </div>
       <div className="weatherIcon">
         <WeatherIcon
           className="icon"
           name="owm"
-          iconId={icon}
+          iconId={props.icon}
           data-testid="icon-id"
         />
       </div>
-      <button value={date} onClick={handleForecastSelect}>
-        More Details
-      </button>
+      <button onClick={() => props.onSelect(props.date)}>More details</button>
     </div>
   );
 };
@@ -42,6 +34,7 @@ ForecastSummary.propTypes = {
   temperature: PropTypes.any.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.any.isRequired,
+  onSelect: PropTypes.any,
 };
 
 export default ForecastSummary;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 
 const DetailedForecast = (props) => {
-  const { date, temperature, humidity, wind } = props.forecasts[0];
+  const { date, temperature, humidity, wind } = props.forecasts;
   console.log(props.forecasts);
   return (
     <div className="detailed-forecast">
