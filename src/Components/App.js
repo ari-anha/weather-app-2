@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LocationDetails from "./location-details";
+import SearchForm from "./search-form";
 import ForecastSummaries from "./forecast-summaries";
 import DetailedForecast from "./detailed-forecast";
 import axios from "axios";
@@ -11,6 +12,7 @@ const App = (props) => {
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({ city: "", country: "" });
   const [selectedDate, setSelectedDate] = useState(0);
+  const [searchText, setSearchText] = useState("");
 
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -33,9 +35,25 @@ const App = (props) => {
     fetchData();
   }, []);
 
+  const findCity = () => {
+    axios
+      .get(
+        `https://mcr-codes-weather.herokuapp.com/forecast?city=${searchText}`
+      )
+      .then((response) => {
+        setForecasts(response.data.forecasts);
+        setLocation(response.data.location);
+      });
+  };
+
   return (
     <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />
+      <SearchForm
+        onSearch={findCity}
+        searchText={searchText}
+        setSearchText={setSearchText}
+      />
       <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
@@ -43,7 +61,7 @@ const App = (props) => {
 
       {
         // Because we are using actual JS, not just JSX, we have to wrap this
-        // block in curly braces.
+        // block in curly brackets.
         selectedForecast && <DetailedForecast forecasts={selectedForecast} />
       }
     </div>
