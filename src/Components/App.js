@@ -23,29 +23,58 @@ const App = (props) => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(
-        "https://mcr-codes-weather.herokuapp.com/forecast"
-      );
-
-      setForecasts(result.data.forecasts);
-      setLocation(result.data.location);
-    };
+    async function fetchData() {
+      await axios
+        .get("https://mcr-codes-weather.herokuapp.com/forecast")
+        .then((response) => {
+          setForecasts(response.data.forecasts);
+          setLocation(response.data.location);
+        })
+        .catch((error) => {
+          // Response status codes will only be 404 or 500
+          if (error.response.status === 404) {
+            throw new Error("Page not found.");
+          } else if (error.response.status === 500) {
+            throw new Error("Server error. Please try again later.");
+          } else {
+            // client never received a response, or request never left,
+            // basically anything else.
+            console.log(error.message);
+            throw new Error("Whoops, something has gone wrong...");
+          }
+        });
+    }
 
     fetchData();
   }, []);
 
   const findCity = () => {
-    axios
-      .get(
-        `https://mcr-codes-weather.herokuapp.com/forecast?city=${searchText}`
-      )
-      .then((response) => {
-        setForecasts(response.data.forecasts);
-        setLocation(response.data.location);
-      });
+    async function fetchData() {
+      await axios
+        .get(
+          `https://mcr-codes-weather.herokuapp.com/forecast?city=${searchText}`
+        )
+        .then((response) => {
+          setForecasts(response.data.forecasts);
+          setLocation(response.data.location);
+        })
+        .catch((error) => {
+          // Response status codes will only be 404 or 500
+          if (error.response.status === 404) {
+            alert("This city cannot be found. Please try a different city.");
+          } else if (error.response.status === 500) {
+            throw new Error("Server error. Please try again later.");
+          } else {
+            // client never received a response, or request never left,
+            // basically anything else.
+            console.log(error.message);
+            throw new Error("Whoops, something has gone wrong...");
+          }
+        });
+    }
+    fetchData();
   };
-
+  // console.log(searchText);
   return (
     <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />

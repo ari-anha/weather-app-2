@@ -4,6 +4,18 @@ import PropTypes from "prop-types";
 const SearchForm = (props) => {
   const handleInputChange = (event) => props.setSearchText(event.target.value);
 
+  const onClick = (e) => {
+    e.preventDefault();
+
+    console.log(props.searchText);
+
+    props.onSearch();
+
+    props.setSearchText("");
+  };
+
+  // Previously
+
   return (
     <form>
       <input
@@ -12,7 +24,7 @@ const SearchForm = (props) => {
         onChange={handleInputChange}
         placeholder="Name of city"
       />
-      <button onClick={() => props.onSearch(props.searchText)}>Search</button>
+      <button onClick={onClick}>Search</button>
     </form>
   );
 };
