@@ -1,30 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SearchForm = (props) => {
-  const handleInputChange = (event) => props.setSearchText(event.target.value);
+const SearchForm = ({ findCity, setSearchText, searchText }) => {
+  const handleInputChange = (event) => setSearchText(event.target.value);
 
-  const onClick = (e) => {
-    e.preventDefault();
+  // const onClick = (e) => {
+  //   e.preventDefault();
 
-    console.log(props.searchText);
+  //   console.log(props.searchText);
 
-    props.onSearch();
+  //   props.onSearch();
 
-    props.setSearchText("");
-  };
-
+  //   props.setSearchText("");
+  // };
   // Previously
 
   return (
     <form>
       <input
         type="text"
-        value={props.searchText}
+        value={searchText}
         onChange={handleInputChange}
         placeholder="Name of city"
       />
-      <button onClick={onClick}>Search</button>
+      <button onClick={(event) => findCity(event)}>Search</button>
     </form>
   );
 };

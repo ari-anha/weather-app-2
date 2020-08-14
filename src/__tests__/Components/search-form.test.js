@@ -44,3 +44,10 @@
 // Maybe use mock data, then use:
 // expect(getByText("York, GB")).toHaveClass("location-details")
 // or something?
+//
+// Another idea:
+// test("renders learn react link", () => {
+//     const { getByText } = render(<App />);
+//     const linkElement = getByText(/learn react/i);
+//     expect(linkElement).toBeInTheDocument();
+//   });

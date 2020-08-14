@@ -48,7 +48,8 @@ const App = (props) => {
     fetchData();
   }, []);
 
-  const findCity = () => {
+  const findCity = (e) => {
+    e.preventDefault();
     async function fetchData() {
       await axios
         .get(
@@ -73,13 +74,14 @@ const App = (props) => {
         });
     }
     fetchData();
+    setSearchText("");
   };
   // console.log(searchText);
   return (
     <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />
       <SearchForm
-        onSearch={findCity}
+        findCity={findCity}
         searchText={searchText}
         setSearchText={setSearchText}
       />
