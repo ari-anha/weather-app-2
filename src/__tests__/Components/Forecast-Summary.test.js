@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { render } from "@testing-library/react";
-import ForecastSummary from "../../Components/forecast-summary";
+import ForecastSummary from "../../Components/Forecast-Summary";
 
 describe("ForecastSummary", () => {
   it("renders correctly", () => {

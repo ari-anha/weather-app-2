@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import DetailedForecast from "../../Components/detailed-forecast";
+import DetailedForecast from "../../Components/Detailed-Forecast";
 
 it("renders the correct props", () => {
   const props = {

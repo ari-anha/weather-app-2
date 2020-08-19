@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/Search-Form.css";
 
 const SearchForm = ({ findCity, setSearchText, searchText }) => {
   const handleInputChange = (event) => setSearchText(event.target.value);
@@ -16,14 +17,17 @@ const SearchForm = ({ findCity, setSearchText, searchText }) => {
   // Previously
 
   return (
-    <form>
+    <form className="searchForm">
       <input
+        className="searchInput"
         type="text"
         value={searchText}
         onChange={handleInputChange}
         placeholder="Name of city"
       />
-      <button onClick={(event) => findCity(event)}>Search</button>
+      <button className="searchButton" onClick={(event) => findCity(event)}>
+        Search
+      </button>
     </form>
   );
 };

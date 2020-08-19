@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import LocationDetails from "./location-details";
-import SearchForm from "./search-form";
-import ForecastSummaries from "./forecast-summaries";
-import DetailedForecast from "./detailed-forecast";
+import LocationDetails from "./Location-Details";
+import SearchForm from "./Search-Form";
+import ForecastSummaries from "./Forecast-Summaries";
+import DetailedForecast from "./Detailed-Forecast";
 import axios from "axios";
 // import PropTypes from "prop-types";
 
