@@ -1,13 +1,97 @@
 .forecast-summary {
   text-align: center;
-  width: 200px;
+  width: 130px;
+  height: auto;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .date {
-  font-size: 25px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .weatherIcon {
-  line-height: 2;
-  font-size: 50px;
+  line-height: 1.5;
+  font-size: 25px;
 }
+
+.temperature,
+.description {
+  font-size: 15px;
+  padding-bottom: 2px;
+}
+
+.detailButton {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: blue;
+  padding: 3px;
+}
+
+/*media query start*/
+@media screen and (min-width: 410px) {
+  .forecast-summary {
+    width: 170px;
+    margin-top: 4px;
+  }
+  .date {
+    font-size: 25px;
+  }
+  .weatherIcon {
+    font-size: 30px;
+  }
+  .temperature,
+  .description {
+    font-size: 18px;
+  }
+  .detailButton {
+    border-radius: 7px;
+    font-size: 17px;
+    padding: 3px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .forecast-summary {
+    width: 200px;
+  }
+  .date {
+    font-size: 25px;
+  }
+  .weatherIcon {
+    font-size: 40px;
+  }
+  .detailButton {
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 3px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .forecast-summary {
+    width: 200px;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  .date {
+    font-size: 25px;
+  }
+  .weatherIcon {
+    font-size: 50px;
+  }
+  .temperature,
+  .description {
+    font-size: 20px;
+  }
+}
+/*media query end*/

@@ -5,10 +5,9 @@ import "../styles/detailed-forecast.css";
 
 const DetailedForecast = (props) => {
   const { date, temperature, humidity, wind } = props.forecasts;
-  console.log(props.forecasts);
   return (
     <div className="detailed-forecast">
-      <div className="date">{moment(date).format("ddd Do MMM")}</div>
+      <div className="detailedDate">{moment(date).format("ddd Do MMM")}</div>
       <div className="temperatureMax">
         Max Temperature: {temperature.max}&deg;c
       </div>
@@ -17,9 +16,8 @@ const DetailedForecast = (props) => {
       </div>
       <div className="humidity">Humidity: {humidity}%</div>
       <div className="wind">
-        Wind: {wind.speed}mph {wind.direction}
+        Wind: {wind.speed}mph & Direction {wind.direction}
       </div>
-      <i className="wi wi-alien"></i>
     </div>
   );
 };

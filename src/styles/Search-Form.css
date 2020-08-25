@@ -1,29 +1,33 @@
 .searchForm {
   width: 250px;
   height: 40px;
-  padding: 3px;
-  background-color: #4f5053;
+  padding: 2px;
+  /* background-color: #7e8084; */
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .searchInput {
   height: 30px;
   width: 165px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 2px 2.5px 5px 5px;
-  color: #42454e;
+  color: #36383f;
+  font-weight: 700;
   background-color: #fff;
 }
 
 .searchButton {
   height: 35px;
   width: 70px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 2px 5px 5px 2.5px;
   color: white;
-  background-color: #1bba9a;
+  font-weight: 700;
+  background-color: rgb(0, 149, 255);
 }

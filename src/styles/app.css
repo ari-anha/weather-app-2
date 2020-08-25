@@ -1,4 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+
+body {
+  background-image: url("stacy-marie-mLx1dc-AJ5k-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .forecast {
   margin: 0 20px;
-  font-family: "Arvo", serif;
+  font-family: "Kosugi Maru", sans-serif;
 }

@@ -3,4 +3,74 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  border-radius: 30px;
+  color: rgb(1, 0, 32);
+  background-color: yellow;
+  width: 250px;
+  height: auto;
+  padding: 5px;
 }
+
+.detailedDate {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.temperatureMax,
+.temperatureMin,
+.humidity,
+.wind {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 2px;
+}
+
+/*media query start*/
+@media screen and (min-width: 410px) {
+  .detailedDate {
+    font-size: 23px;
+  }
+
+  .temperatureMax,
+  .temperatureMin,
+  .humidity,
+  .wind {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .detailedDate {
+    font-size: 26px;
+  }
+
+  .temperatureMax,
+  .temperatureMin,
+  .humidity,
+  .wind {
+    font-size: 19px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .detailed-forecast {
+    width: 320px;
+  }
+
+  .detailedDate {
+    font-size: 30px;
+  }
+
+  .temperatureMax,
+  .temperatureMin,
+  .humidity,
+  .wind {
+    font-size: 21px;
+  }
+}
+/*media query end*/
