@@ -24,14 +24,14 @@ Packages used:
 
 - [Axios](https://www.npmjs.com/package/axios)
 - [PropTypes](https://www.npmjs.com/package/prop-types)
-- [React Icons Library](https://react-icons.github.io/react-icons/)
+- [React Icons Weather](https://www.npmjs.com/package/react-icons-weather)
 
 ## How to run the app
 
 Clone the repo onto your machine.
 
 ```
-$ git clone https://github.com/ari-anha/React-tech-test
+$ git clone https://github.com/ari-anha/weather-app-2
 ```
 
 Change directories so that you are in the cloned repository.
